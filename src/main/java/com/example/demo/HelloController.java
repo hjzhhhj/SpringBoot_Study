@@ -42,10 +42,10 @@ public class HelloController {
         return "hello";
     }
 
-    @PostMapping("/hello") // 아무것도 안쓰면 APPLICATION_JSON_VALUE 로 인식
-    public String postHello() {
-        return "hello";
-    }
+//    @PostMapping("/hello") // 아무것도 안쓰면 APPLICATION_JSON_VALUE 로 인식
+//    public String postHello() {
+//        return "hello";
+//    }
 
     @PostMapping("/post")
     public String post() { //
@@ -69,9 +69,11 @@ public class HelloController {
         return data;
     }
 
-    @GetMapping(value="/user/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="/users/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public UserData getUserData(@PathVariable int id) {
         UserData data = new UserData();
+        // data.setName("John");
+        // data.setAge(20);
         if (id == 1) {
             data.setName("John");
             data.setAge(20);
